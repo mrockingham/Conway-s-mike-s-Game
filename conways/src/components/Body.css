@@ -1,0 +1,56 @@
+.body{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    
+}
+
+.body-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-style: none;
+}
+
+
+.conways-gameb{
+    height: 100px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.conways-gameb > img{
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.MuiCard-root{
+    border-radius: 50px;
+
+
+box-shadow:  21px 21px 16px #8d8d8d, 
+             -21px -21px 16px #110a58;
+             
+    
+}
+.conways-title{
+    margin-left: 5%;
+    text-align: center;
+    width: 80%;
+    color: rgb(58,123,192);
+    border-radius: 77px;
+    box-shadow:  23px 23px 46px #070423, 
+             -21px -21px 16px #191549;
+
+}
+.conways-title > p{
+    color: rgb(58,123,192);
+    width: 80%;
+    
+}

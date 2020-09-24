@@ -1,0 +1,78 @@
+
+  .app-body{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    align-items: center;
+  
+  }
+
+  .grid-container{
+    padding: 3%;
+    border-radius: 72px;
+background: #110a58;
+box-shadow: inset 29px 29px 45px #090630, 
+            inset -29px -29px 45px #190f80;
+  }
+  
+  .app{
+    width: 100%;
+  }
+ 
+  .start-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .clear-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .random-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .fast-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .slow-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .grid-size-text{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .grid-buttons{
+    margin-bottom: 3%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%
+    
+  }
+  .grid-buttons > button{
+    margin-bottom: 30%;
+  }
+
+  .grid-generation{
+    color: rgb(58,123,192);
+    font-size: 1.5rem;
+  }
+  .game-lineup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }

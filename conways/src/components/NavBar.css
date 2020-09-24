@@ -1,0 +1,78 @@
+.nav-box{
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    
+    
+  }
+.navContainer{
+    width: 100%;
+    background-color: rgba(71, 68, 68, .0);
+    }
+
+.nav-name > h2{
+    color: rgb(58,123,192);
+    
+    
+    
+}
+.nav-name{
+    
+    
+    
+    
+    padding-top: 1%;
+    padding-left: 2%;
+    
+}
+
+
+.navInfo{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    
+  }
+  .nav-list{
+      padding-top: 1%;
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      padding-right: 2%;
+  }
+  button{
+    border-radius: 50px;
+background: linear-gradient(145deg, #120d5e, #0f0b4f);
+box-shadow:  21px 21px 16px #070523, 
+             -21px -21px 16px #191549;
+  }
+  .home-link{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  
+.conway-link {
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+  }
+.scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(71, 68, 68);
+  }
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+.sticky + .content {
+    padding-top: 60px;
+  }

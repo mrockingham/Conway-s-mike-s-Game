@@ -1,0 +1,87 @@
+.header-box{
+ margin: auto;   
+margin-top: 6%;
+height: 85vh;
+width: 90%;
+background: linear-gradient(to right, rgba(12,8,54,1) 0%,rgba(12,8,54,1) 39%,rgba(12,8,54,0.97) 40%,rgba(41,14,233,0.59) 51%,rgba(32,124,202,0.49) 54%,rgba(60,143,211,0) 68%,rgba(121,182,231,0) 98%,rgba(125,185,232,0) 100%), url('./img/digitalcity.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+border-radius: 50px;
+
+
+box-shadow:  23px 23px 46px #070423, 
+            -23px -23px 46px #1b108d;
+             border: oldlace;
+}
+
+
+.header-title{
+    margin-left: 7%;
+    padding-top: 6% ;
+}
+.header-title > h1{
+font-family: 'teko';
+color: rgb(58,123,192) ;
+    
+   
+top: 50%;
+left: 50%;
+font-family: 'Poppins',sans-serif;
+font-size: 3rem;
+text-shadow: 
+-8px -8px 12px rgba(202,111,183,0.9),
+8px 8px 12px rgba(0,0,0,0.08);
+caret-color:#262626;
+outline: none;
+}
+
+.header-game-1 > h2{
+
+font-family: 'teko';
+color: rgb(58,123,192) ;
+top: 50%;
+left: 50%;
+font-family: 'Poppins',sans-serif;
+font-size: 2rem;
+text-shadow: 
+-8px -8px 12px rgba(202,111,183,0.9),
+8px 8px 12px rgba(0,0,0,0.08);
+caret-color:#262626;
+outline: none;
+margin-top: 5%;
+}
+.header-game-2 > h2{
+
+font-family: 'teko';
+color: rgb(58,123,192) ;
+top: 50%;
+left: 50%;
+font-family: 'Poppins',sans-serif;
+font-size: 2rem;
+text-shadow: 
+-8px -8px 12px rgba(202,111,183,0.9),
+8px 8px 12px rgba(0,0,0,0.08);
+caret-color:#262626;
+outline: none;
+margin-left: 10%;
+margin-top: 5%;
+}
+.header-game-3 > h2{
+
+font-family: 'teko';
+color: rgb(58,123,192) ;
+top: 50%;
+left: 50%;
+font-family: 'Poppins',sans-serif;
+font-size: 2rem;
+text-shadow: 
+-8px -8px 12px rgba(202,111,183,0.9),
+8px 8px 12px rgba(0,0,0,0.08);
+caret-color:#262626;
+outline: none;
+margin-left: 10%;
+margin-top: 5%;
+}
+
+/* rgb(202,111,183) */

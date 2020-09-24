@@ -1,0 +1,368 @@
+import React, { useState, useCallback, useRef } from "react";
+import "./Congame.css";
+import Produce from "immer";
+import FastForwardIcon from "@material-ui/icons/FastForward";
+import StopIcon from "@material-ui/icons/Stop";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import SlowMotionVideoIcon from "@material-ui/icons/SlowMotionVideo";
+import DialpadIcon from "@material-ui/icons/Dialpad";
+import ClearIcon from "@material-ui/icons/Clear";
+import { motion } from "framer-motion";
+
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    backgroundColor: "rgb(17, 10, 88)",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+    
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
+const operations = [
+  [0, 1],
+  [0, -1],
+  [1, -1],
+  [-1, 1],
+  [1, 1],
+  [-1, -1],
+  [1, 0],
+  [-1, 0],
+];
+
+function Congame() {
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
+  const [gridSize1, setGridSize] = useState(10);
+  const [grid, setGrid] = useState(() => {
+    const rows = [];
+    for (let i = 0; i < gridSize1; i++) {
+      rows.push(Array.from(Array(gridSize1), () => 0));
+    }
+
+    return rows;
+  });
+  console.log(gridSize1);
+  const [running, setRunning] = useState(false);
+  const runningRef = useRef(running);
+  const [count, setCount] = useState(0);
+  const [speed, setSpeed] = useState(1000);
+  runningRef.current = running;
+
+  const gsize = gridSize1;
+
+  const runSimulation = useCallback(() => {
+    if (!runningRef.current) {
+      return;
+    }
+    setSpeed((speed) => speed);
+    setCount((count) => (count += 1));
+    setGrid((g) => {
+      return Produce(g, (gridCopy) => {
+        for (let i = 0; i < gridSize1; i++) {
+          for (let s = 0; s < gridSize1; s++) {
+            let neighbors = 0;
+
+            operations.forEach(([x, y]) => {
+              const newI = i + x;
+              const newS = s + y;
+              if (
+                newI >= 0 &&
+                newI < gridSize1 &&
+                newS >= 0 &&
+                newS < gridSize1
+              ) {
+                neighbors += g[newI][newS];
+              }
+            });
+
+            if (neighbors < 2 || neighbors > 3) {
+              gridCopy[i][s] = 0;
+            } else if (g[i][s] === 0 && neighbors === 3) {
+              gridCopy[i][s] = 1;
+            }
+          }
+        }
+      });
+    });
+    console.log("gsize", gridSize1);
+    setTimeout(runSimulation, speed);
+  }, [gridSize1]);
+
+  const runSimulation2 = useCallback(() => {
+    if (!runningRef.current) {
+      return;
+    }
+    setCount((count) => (count += 1));
+    setGrid((g) => {
+      return Produce(g, (gridCopy) => {
+        for (let i = 0; i < gridSize1; i++) {
+          for (let s = 0; s < gridSize1; s++) {
+            let neighbors = 0;
+
+            operations.forEach(([x, y]) => {
+              const newI = i + x;
+              const newS = s + y;
+              if (
+                newI >= 0 &&
+                newI < gridSize1 &&
+                newS >= 0 &&
+                newS < gridSize1
+              ) {
+                neighbors += g[newI][newS];
+              }
+            });
+
+            if (neighbors < 2 || neighbors > 3) {
+              gridCopy[i][s] = 0;
+            } else if (g[i][s] === 0 && neighbors === 3) {
+              gridCopy[i][s] = 1;
+            }
+          }
+        }
+      });
+    });
+
+    setTimeout(runSimulation2, 3000);
+  }, [gridSize1]);
+  const runSimulation3 = useCallback(() => {
+    if (!runningRef.current) {
+      return;
+    }
+    setCount((count) => (count += 1));
+    setGrid((g) => {
+      return Produce(g, (gridCopy) => {
+        for (let i = 0; i < gridSize1; i++) {
+          for (let s = 0; s < gridSize1; s++) {
+            let neighbors = 0;
+
+            operations.forEach(([x, y]) => {
+              const newI = i + x;
+              const newS = s + y;
+              if (
+                newI >= 0 &&
+                newI < gridSize1 &&
+                newS >= 0 &&
+                newS < gridSize1
+              ) {
+                neighbors += g[newI][newS];
+              }
+            });
+
+            if (neighbors < 2 || neighbors > 3) {
+              gridCopy[i][s] = 0;
+            } else if (g[i][s] === 0 && neighbors === 3) {
+              gridCopy[i][s] = 1;
+            }
+          }
+        }
+      });
+    });
+
+    setTimeout(runSimulation3, 50);
+  }, [gridSize1]);
+
+  return (
+    <div className="app-body">
+      <div className="grid-generation">
+          <h3>
+            Generation:{"  "}
+            {count}
+          </h3>
+        </div>
+        <Card className={classes.root}>
+     <div className='game-lineup'>   
+      <div className="grid-buttons">
+        <button
+          className="conway-start"
+          onClick={() => {
+            setGridSize(gridSize1);
+            setRunning(!running);
+            if (!running) {
+              runningRef.current = true;
+
+              runSimulation();
+              console.log("what is this", gridSize1);
+            }
+          }}
+        >
+          <div className="start-text">
+            {running ? <StopIcon /> : <PlayArrowIcon />}
+          </div>
+        </button>
+
+        <button
+          onClick={() => {
+            setRunning(!running);
+            if (!running) {
+              runningRef.current = true;
+
+              runSimulation2();
+            }
+          }}
+        >
+          <div className="slow-text">
+            {running ? <StopIcon /> : <SlowMotionVideoIcon />}
+          </div>
+        </button>
+
+        <button
+          onClick={() => {
+            setRunning(!running);
+            if (!running) {
+              runningRef.current = true;
+
+              runSimulation3();
+            }
+          }}
+        >
+          <div className="fast-text">
+            {running ? <StopIcon /> : <FastForwardIcon />}
+          </div>
+        </button>
+
+        <button
+          onClick={() => {
+            setCount(0);
+            const rows = [];
+            for (let i = 0; i < gridSize1; i++) {
+              rows.push(Array.from(Array(gridSize1), () => 0));
+            }
+            setGrid(rows);
+            return rows;
+          }}
+        >
+          <div className="clear-text">
+            <ClearIcon />
+          </div>
+        </button>
+
+        <button
+          onClick={() => {
+            const rows = [];
+            for (let i = 0; i < gridSize1; i++) {
+              rows.push(
+                Array.from(Array(gridSize1), () =>
+                  Math.random() > 0.6 ? 1 : 0
+                )
+              );
+            }
+
+            setGrid(rows);
+          }}
+        >
+          <div className="random-text">
+            <DialpadIcon />
+          </div>
+        </button>
+
+        {/* setCount((count) => (count += 1)); */}
+
+        
+      </div>
+      
+        
+        <div className="grid-container">
+          <div
+            className="app"
+            style={{
+              display: "grid",
+              gridTemplateColumns: `repeat(${gridSize1}, 20px)`,
+              columnGap: "3rem",
+            }}
+          >
+            {grid.map((rows, x) =>
+              rows.map((col, y) => (
+                <motion.div
+                  className="grid-box"
+                  animate={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 270, 270, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    times: [0, 0.2, 0.5, 0.8, 1],
+                    loop: Infinity,
+                    repeatDelay: 1,
+                  }}
+                  key={`${x}-${y}`}
+                  onClick={() => {
+                    const newGrid = Produce(grid, (gridCopy) => {
+                      gridCopy[x][y] = grid[x][y] ? 0 : 1;
+                    });
+                    setGrid(newGrid);
+                  }}
+                  style={{
+                    width: 20,
+                    height: 15,
+                    backgroundColor: grid[x][y] ? "purple" : undefined,
+                    border: "solid 1px black",
+                    margin: "10px",
+                    paddingTop: "10px",
+                  }}
+                />
+              ))
+            )}
+          </div>
+        </div>
+        <div className="grid-buttons">
+        
+
+        <button
+          onClick={() => {
+            setGridSize(15);
+            const rows = [];
+            for (let i = 0; i < gridSize1; i++) {
+              rows.push(Array.from(Array(gridSize1), () => 0));
+            }
+            setGrid(rows);
+            return rows;
+          }}
+        >
+          <div className="grid-size-text">GridSize 15</div>
+        </button>
+        <button
+          onClick={() => {
+            setGridSize(10);
+            const rows = [];
+            for (let i = 0; i < gridSize1; i++) {
+              rows.push(Array.from(Array(gridSize1), () => 0));
+            }
+            setGrid(rows);
+            return rows;
+          }}
+        >
+          <div className="grid-size-text">GridSize 10</div>
+        </button>
+      </div>
+       </div> 
+       
+      </Card>
+      
+    </div>
+  );
+}
+
+export default Congame;

@@ -88,7 +88,7 @@ const Body = () => {
                          image={Conwaysimg} title ='img of conways game' />
                          <Link className='conway-link' to='/Conways_Game'>
                         <CardContent className='conways-title'>
-                            <Typography gutterBottom variant="h5" component="h2">Tetris
+                            <Typography gutterBottom variant="h5" component="h2">Conway's Game
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.
                             </Typography>

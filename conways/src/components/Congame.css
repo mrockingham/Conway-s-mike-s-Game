@@ -53,6 +53,11 @@ box-shadow: inset 29px 29px 45px #090630,
     text-decoration: none;
     font-size: 1.2rem;
   }
+  .instructions{
+    color: rgb(58,123,192);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
   
   .grid-buttons{
     margin-bottom: 3%;
@@ -95,3 +100,9 @@ box-shadow: inset 29px 29px 45px #090630,
       column-gap: 1rem;
     }
   }
+
+
+  /* It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine. */
+
+
+  /* Tetris is a tile-matching video game created by Russian software engineer Alexey Pajitnov in 1984. It has been published by several companies, most prominently during a dispute over the appropriation of the game's rights in the late 1980s. */

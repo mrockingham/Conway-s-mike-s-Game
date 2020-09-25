@@ -1,8 +1,9 @@
 .nav-box{
     position: fixed ;
     top: 0;
-    width: 100%;
+    min-width: 100%;
     z-index: 1;
+    
     
     
   }
@@ -43,8 +44,8 @@
   }
   button{
     border-radius: 50px;
-background: linear-gradient(145deg, #120d5e, #0f0b4f);
-box-shadow:  21px 21px 16px #070523, 
+    background: linear-gradient(145deg, #120d5e, #0f0b4f);
+    box-shadow:  21px 21px 16px #070523, 
              -21px -21px 16px #191549;
   }
   .home-link{

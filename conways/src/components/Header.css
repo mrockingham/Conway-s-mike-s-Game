@@ -19,12 +19,13 @@ box-shadow:  23px 23px 46px #070423,
 .header-title{
     margin-left: 7%;
     padding-top: 6% ;
+  
 }
+
+
 .header-title > h1{
 font-family: 'teko';
-color: rgb(58,123,192) ;
-    
-   
+color: rgb(58,123,192);
 top: 50%;
 left: 50%;
 font-family: 'Poppins',sans-serif;
@@ -34,7 +35,12 @@ text-shadow:
 8px 8px 12px rgba(0,0,0,0.08);
 caret-color:#262626;
 outline: none;
+
 }
+
+
+
+
 
 .header-game-1 > h2{
 
@@ -51,6 +57,12 @@ caret-color:#262626;
 outline: none;
 margin-top: 5%;
 }
+
+
+
+
+
+
 .header-game-2 > h2{
 
 font-family: 'teko';
